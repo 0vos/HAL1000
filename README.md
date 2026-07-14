@@ -32,11 +32,15 @@
 | B3 基础要求 | ✅ 全部完成（schema 生成 + 工具调用执行） |
 | B4 基础要求 | ✅ 全部完成（prompt_json 模式真实推理） |
 | B5 基础要求 | ✅ 全部完成（记忆存取 + 索引） |
-| B1 进阶 | ✅ DAG 并发调度、FSM 裁判、会话持久化、分层记忆、产物管理 |
-| B2 进阶 | ✅ 复合 Skill、沙箱执行、ErrorCode 分类 |
-| B3 进阶 | ✅ auto_schema、Retry、Cache、Stats、schema ablation 实验 |
-| B4 进阶 | ✅ 多阶段模型切换、视觉 VQA、json_mode 生成控制 |
-| 当前限制 | 沙箱非完全隔离；tool_cache 无 TTL；裁判每次额外消耗 ~1-2s 推理 |
+| B1 进阶 | ✅ 多轮用户输入 + tool_calls 循环；✅ 断点续跑 `--resume`；✅ 批量任务 `b1_batch_runner.py`；✅ 历史消息压缩摘要（compress_after=10）；✅ 多 system prompt 切换（plan/execute/summarize 多阶段） |
+| B2 进阶 | ✅ 增强 local_file_search（已废弃，改用 shell_exec+find）；✅ 代码执行沙箱（signal.SIGALRM + 受限 builtins）；✅ 复合 Skill（read_and_convert）；✅ 完善错误分类（ErrorCode + SkillError 异常体系）；✅ 高耗时/高风险 Skill 超时限制 |
+| B3 进阶 | ✅ 自动从 Python 函数生成 tools_schema（auto_schema.py）；✅ 可恢复错误有限重试（Retry + 指数退避）；✅ tool_call 结果缓存（LRU + 磁盘持久化）；✅ 工具调用统计（次数/失败率/平均耗时）；✅ 不同 schema 描述对模型准确率影响对比实验（schema ablation） |
+| B4 进阶 | ✅ 单轮多 tool_calls + 多 ToolMessage；✅ Plan-and-Execute（DAG 规划器）；✅ 多阶段本地模型切换（b4_model_switch.py）；✅ 模型内置 tools_schema 传参 vs prompt 注入对比；✅ 视觉 VQA（generate_vision_answer） |
+| B5 进阶 | ✅ 关键词检索排序（BM25 TopK）；✅ 自动压缩长 messages/answer 为摘要；✅ memory 文档更新与冲突合并；✅ 向量检索（all-MiniLM-L6-V2，相似度 TopK）；✅ 错误 memory 对最终回答影响分析 |
+| B1 自研进阶 | ✅ **LLM 语义裁判**（_judge_by_llm，DAG/FSM 双路径，done=true 才算完成）；✅ **DAG 并发调度**（fork+50ms poll，多节点自动并行）；✅ **节点级 Retry + resolve-retry**（指数退避，最多 2 次）；✅ **人在环计划确认**（_confirm_plan，用户可修改 → 重新规划）；✅ **fallback 链**（DAG 全失败 → FSM；LLM 裁判失败 → 关键词规则）；✅ **产物版本管理**（artifact_registry，支持 rollback + diff）；✅ **/stop 中断指令**（后台线程监听，安全退出）；✅ **/branch、/undo** 分支管理；✅ **代码入口点验证**（无 if __main__ 触发 retry）；✅ **阻塞型代码识别**（curses/pygame 超时视为成功）；✅ **normalize_tool_call 顶层参数兜底** |
+| B2 自研进阶 | ✅ **PDF 四级 fallback**（pdfplumber → PyMuPDF → pdfminer → pdftotext CLI）；✅ **DOCX/PDF/图片绝对路径直通**（is_absolute() 检测，跳过 data/ 限制）；✅ **image_qa 视觉问答**（主进程直接调用，避免子进程 120s 超时）；✅ **table_analyzer 绝对路径支持** |
+| B4 自研进阶 | ✅ **generate_text_only json_mode 参数**（Planner 用 json_mode=True，代码生成用 False，场景隔离）；✅ **全局模型缓存**（_MODEL_CACHE/_VISION_MODEL_CACHE，同参数复用，避免重复加载）；✅ **_make_verify_code 三阶段验证**（语法检查 → 沙箱运行 → 结果断言） |
+| 当前限制 | 沙箱非完全隔离（signal 方式，非容器级）；tool_cache 无 TTL；裁判每次额外消耗 ~1-2s 推理 |
 
 ---
 
