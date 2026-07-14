@@ -1,0 +1,12 @@
+roster:
+  default:
+    model_config: model.yaml
+  fast:
+    model_config: model.yaml
+    generation_overrides:
+      max_new_tokens: 256
+  strict:
+    model_config: model.yaml
+    generation_overrides:
+      temperature: 0
+      max_new_tokens: 512

@@ -1,0 +1,80 @@
+# ── Python 编译缓存 ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── 运行时生成的输出（全部排除）────────────────────────────────
+outputs/
+sessions/
+
+# ── Episodic memory 数据库（运行时自动创建）──────────────────────
+*.db
+
+# ── 工具结果缓存（运行时自动生成）────────────────────────────────
+outputs/tool_cache.json
+
+# ── 模型权重（体积太大，路径通过 model.yaml 配置）────────────────
+models/*
+!models/.gitkeep
+code/models/*
+!code/models/.gitkeep
+
+# ── 日志 ─────────────────────────────────────────────────────
+*.log
+*.jsonl
+
+# ── macOS 系统文件 ────────────────────────────────────────────
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# ── 临时文件 ─────────────────────────────────────────────────
+*.tmp
+*.bak
+*.swp
+*~
+
+# ── data/ 目录中的运行时生成文件（保留测试 fixtures）────────────
+# 运行时生成的代码文件（file_writer 输出）
+data/output/
+data/games/
+data/algorithms/
+data/utils/
+data/sort.py
+
+# ── memory 向量数据库（运行时自动构建）───────────────────────────
+memory/.vector_db/
+
+# ── 格式转换输出 ──────────────────────────────────────────────
+outputs/format_converter_files/
+
+# ── pptx / docx 等大型二进制（演示文件，不需要版本控制）──────────
+*.pptx
+B方向_Agent智能体_说明文档.docx
+
+# ── 以下内容明确保留（用 ! 取消排除）─────────────────────────────
+# 保留 data/ 下的测试 fixtures、样本数据和文档
+!data/b1_fixtures/
+!data/b2_samples/
+!data/docs/
+!data/messages/
+!data/tables/
+!data/tool_inputs/
+!data/memory_inputs/
+!data/batch_input.json
+!data/llm_input.json
+!data/runtime_input*.json
+!data/GDPRPrivacyNotice.pdf
+!data/IMG_0532.png
+!data/gsm8k_500.csv
+!data/*.docx
+
+# 保留 memory 目录的静态内容（conversation logs 和 global memory）
+!memory/conversations/
+!memory/global/
+!memory/memory_index.json
+
+# 保留 outputs 目录结构占位符（空目录需要 .gitkeep）

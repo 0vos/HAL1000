@@ -1,0 +1,10 @@
+{
+  "path": "docs/tool_calling.md",
+  "query": "tool schema",
+  "max_chars": 12000,
+  "chunk_size": 800,
+  "chunk_overlap": 80,
+  "top_k": 3,
+  "extract_tables": true,
+  "ocr_mode": "auto"
+}

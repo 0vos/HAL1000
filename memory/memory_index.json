@@ -1,0 +1,92 @@
+{
+  "mem_course_001": {
+    "memory_id": "mem_course_001",
+    "memory_type": "global",
+    "title": "Agent 基础概念",
+    "summary": "Agent 系统由模型、工具、记忆和执行循环组成。",
+    "path": "global/mem_course_001.md",
+    "conversation_id": null,
+    "created_at": "2026-06-20T00:00:00+08:00",
+    "updated_at": "2026-06-20T00:00:00+08:00"
+  },
+  "mem_conversation_conv_000": {
+    "memory_id": "mem_conversation_conv_000",
+    "memory_type": "conversation",
+    "title": "Conversation conv_000",
+    "summary": "Agent（智能体）是指能够自主感知环境、规划行动并执行任务的智能系统。它通常具备感知、决策和执行三个核心能力，能够根据目标动态调整行为，无需人类持续干预即可完成任务。在人工智能领域，Agent 可以是简单的规则系统，也可以是复杂的深度学习模型，广泛应用于自动化、机器人、客户服务等场景。",
+    "path": "conversations/conv_000.md",
+    "conversation_id": "conv_000",
+    "created_at": "2026-06-22T14:07:46+00:00",
+    "updated_at": "2026-06-22T14:07:46+00:00"
+  },
+  "mem_conversation_conv_001": {
+    "memory_id": "mem_conversation_conv_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_001",
+    "summary": "1. Agent 系统通常由模型、工具、记忆和执行循环组成 2. 工具调用让模型能够读取本地文件、执行计算，并把结果用于后续回答 3. Memory 为 Agent 提供全局知识和历史对话上下文",
+    "path": "conversations/conv_001.md",
+    "conversation_id": "conv_001",
+    "created_at": "2026-07-03T14:30:08+08:00",
+    "updated_at": "2026-07-12T20:04:57+08:00"
+  },
+  "mem_conversation_conv_calc_001": {
+    "memory_id": "mem_conversation_conv_calc_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_calc_001",
+    "summary": "1. Agent 系统通常由模型、工具、记忆和执行循环组成 2. 工具调用让模型能够读取本地文件、执行计算，并把结果用于后续回答 3. Memory 为 Agent 提供全局知识和历史对话上下文",
+    "path": "conversations/conv_calc_001.md",
+    "conversation_id": "conv_calc_001",
+    "created_at": "2026-07-03T17:03:31+08:00",
+    "updated_at": "2026-07-12T20:05:12+08:00"
+  },
+  "mem_conversation_conv_search_001": {
+    "memory_id": "mem_conversation_conv_search_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_search_001",
+    "summary": "1. Agent 系统通常由模型、工具、记忆和执行循环组成 2. 工具调用让模型能够读取本地文件、执行计算，并把结果用于后续回答 3. Memory 为 Agent 提供全局知识和历史对话上下文",
+    "path": "conversations/conv_search_001.md",
+    "conversation_id": "conv_search_001",
+    "created_at": "2026-07-03T17:03:31+08:00",
+    "updated_at": "2026-07-12T20:05:20+08:00"
+  },
+  "mem_conversation_conv_table_001": {
+    "memory_id": "mem_conversation_conv_table_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_table_001",
+    "summary": "1. Agent 系统通常由模型、工具、记忆和执行循环组成 2. 工具调用让模型能够读取本地文件、执行计算，并把结果用于后续回答 3. Memory 为 Agent 提供全局知识和历史对话上下文",
+    "path": "conversations/conv_table_001.md",
+    "conversation_id": "conv_table_001",
+    "created_at": "2026-07-03T17:03:31+08:00",
+    "updated_at": "2026-07-12T20:05:27+08:00"
+  },
+  "mem_conversation_conv_format_001": {
+    "memory_id": "mem_conversation_conv_format_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_format_001",
+    "summary": "1. Agent 系统通常由模型、工具、记忆和执行循环组成 2. 工具调用让模型能够读取本地文件、执行计算，并把结果用于后续回答 3. Memory 为 Agent 提供全局知识和历史对话上下文",
+    "path": "conversations/conv_format_001.md",
+    "conversation_id": "conv_format_001",
+    "created_at": "2026-07-03T17:03:31+08:00",
+    "updated_at": "2026-07-12T20:05:35+08:00"
+  },
+  "mem_conversation_conv_sample_001": {
+    "memory_id": "mem_conversation_conv_sample_001",
+    "memory_type": "conversation",
+    "title": "Conversation conv_sample_001",
+    "summary": "Agent 会结合模型、工具和记忆完成任务。",
+    "path": "conversations/conv_sample_001.md",
+    "conversation_id": "conv_sample_001",
+    "created_at": "2026-07-03T17:42:28+08:00",
+    "updated_at": "2026-07-03T21:45:45+08:00"
+  },
+  "mem_conversation_conv_002": {
+    "memory_id": "mem_conversation_conv_002",
+    "memory_type": "conversation",
+    "title": "Conversation conv_002",
+    "summary": "56*29+81 的计算结果是 1705。",
+    "path": "conversations/conv_002.md",
+    "conversation_id": "conv_002",
+    "created_at": "2026-07-12T19:21:10+08:00",
+    "updated_at": "2026-07-12T19:21:10+08:00"
+  }
+}

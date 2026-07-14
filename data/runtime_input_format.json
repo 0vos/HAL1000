@@ -1,0 +1,10 @@
+{
+  "conversation_id": "conv_format_001",
+  "user_input": "把以下三行文字转成 markdown 项目符号：\\n第一行 Agent\\n第二行 工具\\n第三行 记忆",
+  "system_prompt_path": "../prompts/local_tool_agent.txt",
+  "selected_memory_ids": ["mem_conversation_conv_000"],
+  "use_global_memory": true,
+  "toolset": "basic_tools",
+  "max_turns": 3,
+  "save_memory": "conversation"
+}

@@ -1,0 +1,10 @@
+{
+  "path": "b2_samples/poster.pdf",
+  "query": "B2 Skill",
+  "max_chars": 50000,
+  "chunk_size": 1200,
+  "chunk_overlap": 120,
+  "top_k": 3,
+  "extract_tables": true,
+  "ocr_mode": "auto"
+}

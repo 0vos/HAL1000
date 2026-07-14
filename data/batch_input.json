@@ -1,0 +1,32 @@
+[
+  {
+    "conversation_id": "batch_001",
+    "execution_mode": "fixture",
+    "user_input": "帮我阅读 docs/agent_intro.txt，总结三条中文要点。",
+    "system_prompt_path": "../prompts/local_tool_agent.txt",
+    "toolset": "basic_tools",
+    "max_turns": 3,
+    "save_memory": "none",
+    "fixtures": {
+      "selected_memory_path": "../data/b1_fixtures/preset_memory.json",
+      "tools_schema_path": "../data/messages/tools_schema_basic.json",
+      "ai_messages_path": "../data/b1_fixtures/preset_ai_messages.json",
+      "tool_messages_path": "../data/b1_fixtures/preset_tool_messages.json"
+    }
+  },
+  {
+    "conversation_id": "batch_002",
+    "execution_mode": "fixture",
+    "user_input": "请计算 56*29+81 的结果。",
+    "system_prompt_path": "../prompts/local_tool_agent.txt",
+    "toolset": "basic_tools",
+    "max_turns": 3,
+    "save_memory": "none",
+    "fixtures": {
+      "selected_memory_path": "../data/b1_fixtures/preset_memory.json",
+      "tools_schema_path": "../data/messages/tools_schema_basic.json",
+      "ai_messages_path": "../data/b1_fixtures/preset_ai_messages.json",
+      "tool_messages_path": "../data/b1_fixtures/preset_tool_messages.json"
+    }
+  }
+]

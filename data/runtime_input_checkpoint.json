@@ -1,0 +1,9 @@
+{
+  "conversation_id": "conv_checkpoint_test",
+  "execution_mode": "integrated",
+  "user_input": "帮我计算 123 * 456，然后把结果保存到 docs/calc_result.txt",
+  "system_prompt_path": "../prompts/local_tool_agent.txt",
+  "toolset": "basic_tools",
+  "max_turns": 1,
+  "save_memory": "none"
+}
