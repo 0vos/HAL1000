@@ -15,9 +15,9 @@
 
 我负责 B1 和 B4 两个模块，二者共同构成整个 Agent 系统的核心调度层与推理引擎。
 
-**B1（`hal_chat.py` + `task_planner.py` + `task_executor.py`）**是整个系统的"大脑"。它接收用户自然语言输入，调用 B4 将其解析为 JSON 任务图（DAG），并发调度工具调用，通过 LLM 语义裁判验证执行结果，维护完整的多轮消息历史，并将结果归档至 B5 记忆系统。没有 B1，B2/B3/B5 各自都是孤立的工具函数，无法串联成一次完整的 Agent 任务。
+**B1**（`hal_chat.py` + `task_planner.py` + `task_executor.py`）是整个系统的"大脑"。它接收用户自然语言输入，调用 B4 将其解析为 JSON 任务图（DAG），并发调度工具调用，通过 LLM 语义裁判验证执行结果，维护完整的多轮消息历史，并将结果归档至 B5 记忆系统。没有 B1，B2/B3/B5 各自都是孤立的工具函数，无法串联成一次完整的 Agent 任务。
 
-**B4（`b4_local_agent_llm.py` + `b4_model_switch.py`）**是系统的"推理引擎"。它将 Qwen3.5-4B 本地模型封装为标准接口，提供 `generate_ai_message`（工具调用决策）、`generate_text_only`（Planner JSON 生成）、`generate_vision_answer`（视觉问答）三个功能，并维护全局模型缓存避免重复加载。没有 B4，系统无法在完全本地、无网络的条件下运行。
+**B4**（`b4_local_agent_llm.py` + `b4_model_switch.py`）是系统的"推理引擎"。它将 Qwen3.5-4B 本地模型封装为标准接口，提供 `generate_ai_message`（工具调用决策）、`generate_text_only`（Planner JSON 生成）、`generate_vision_answer`（视觉问答）三个功能，并维护全局模型缓存避免重复加载。没有 B4，系统无法在完全本地、无网络的条件下运行。
 
 ### 1.3 完成情况概览
 
@@ -253,12 +253,12 @@ python hal_chat.py --mode prompt_json \
 ### 4.6 基础功能结果截图
 
 <figure>
-<img src="运行截图/截屏2026-07-12%2017.52.08.png" alt="B1 DAG调度完成终端日志" style="max-width:100%">
+<img src="img/截屏2026-07-12%2017.52.08.png" alt="B1 DAG调度完成终端日志" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">B1 DAG 调度完成——终端日志展示节点并发启动与完成</figcaption>
 </figure>
 
 <figure>
-<img src="运行截图/截屏2026-07-12%2017.53.14.png" alt="B4 LLM裁判输出" style="max-width:100%">
+<img src="img/截屏2026-07-12%2017.53.14.png" alt="B4 LLM裁判输出" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">B4 LLM 推理 + 裁判输出 done=true/false 判断结果</figcaption>
 </figure>
 
@@ -345,12 +345,12 @@ python hal_chat.py --mode prompt_json \
 #### 示例图片
 
 <figure>
-<img src="运行截图/截屏2026-07-12%2017.24.16.png" alt="Planner生成DAG并展示计划确认" style="max-width:100%">
+<img src="img/截屏2026-07-12%2017.23.12.png" alt="Planner生成DAG并展示计划确认" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">Planner 生成 DAG 后展示任务计划，等待用户确认</figcaption>
 </figure>
 
 <figure>
-<img src="运行截图/截屏2026-07-13%2019.06.26.png" alt="多步文件分析任务执行完整过程" style="max-width:100%">
+<img src="img/截屏2026-07-13%2019.06.26.png" alt="多步文件分析任务执行完整过程" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">多步文件分析任务——Agent 依次调用工具读取文件并生成综合报告</figcaption>
 </figure>
 
@@ -396,7 +396,7 @@ python hal_chat.py --mode prompt_json \
 #### 示例图片
 
 <figure>
-<img src="运行截图/截屏2026-07-12%2017.53.14.png" alt="LLM裁判输出done判断" style="max-width:100%">
+<img src="img/截屏2026-07-12%2017.53.14.png" alt="LLM裁判输出done判断" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">LLM 裁判输出 done=true/false，决定任务是否真正完成</figcaption>
 </figure>
 
@@ -436,12 +436,12 @@ python hal_chat.py --mode prompt_json \
 #### 示例图片
 
 <figure>
-<img src="运行截图/截屏2026-07-12%2019.16.57.png" alt="sessions目录下多个持久化session文件" style="max-width:100%">
+<img src="img/截屏2026-07-12%2019.16.57.png" alt="sessions目录下多个持久化session文件" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">sessions/ 目录下积累的多个会话持久化文件，每个对应一次完整对话</figcaption>
 </figure>
 
 <figure>
-<img src="运行截图/截屏2026-07-13%2016.50.09.png" alt="checkpoint.json内容展示" style="max-width:100%">
+<img src="img/截屏2026-07-13%2016.50.09.png" alt="checkpoint.json内容展示" style="max-width:100%">
 <figcaption style="text-align:center;color:#666;font-size:0.9em">checkpoint.json 内容：含 conversation_id、resume_from_turn 和完整 messages</figcaption>
 </figure>
 
